@@ -191,6 +191,6 @@ module.exports = {
       'animation-direction'
     ],
     {'unspecified': 'bottomAlphabetical'}],
-    'order/properties-alphabetical-order': false
+    'order/properties-alphabetical-order': null
   }
 };

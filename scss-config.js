@@ -2,8 +2,9 @@ module.exports = {
   'extends': './index.js',
   'plugins': ['stylelint-scss'],
   'rules': {
+    'at-rule-no-unknown': null,
     // @-else
-    'scss/at-else-closing-brace-newline-after': false,
+    'scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
     'scss/at-else-closing-brace-space-after': 'always-intermediate',
     'scss/at-else-empty-line-before': 'never',
 
@@ -11,35 +12,35 @@ module.exports = {
     'scss/at-extend-no-missing-placeholder': true,
 
     // @-function
-    'scss/at-function-pattern': false,
+    'scss/at-function-pattern': null,
 
     // @-if
-    'scss/at-if-closing-brace-newline-after': false,
+    'scss/at-if-closing-brace-newline-after': null,
     'scss/at-if-closing-brace-space-after': 'always-intermediate',
 
     // @-import
     'scss/at-import-no-partial-leading-underscore': true,
     'scss/at-import-partial-extension-blacklist': ['scss'],
-    'scss/at-import-partial-extension-whitelist': false,
+    'scss/at-import-partial-extension-whitelist': null,
 
     // @-mixin
     'scss/at-mixin-argumentless-call-parentheses': 'always',
-    'scss/at-mixin-pattern': false,
+    'scss/at-mixin-pattern': null,
 
     // $-variables
     'scss/dollar-variable-colon-newline-after': 'always-multi-line',
     'scss/dollar-variable-colon-space-after': 'always-single-line',
     'scss/dollar-variable-colon-space-before': 'never',
-    'scss/dollar-variable-empty-line-before': false,
+    'scss/dollar-variable-empty-line-before': null,
     'scss/dollar-variable-no-missing-interpolation': true,
-    'scss/dollar-variable-pattern': false,
+    'scss/dollar-variable-pattern': null,
 
     // %-placeholder
-    'scss/percent-placeholder-pattern': false,
+    'scss/percent-placeholder-pattern': null,
 
     // //-comment
-    'scss/double-slash-comment-empty-line-before': false,
-    'scss/double-slash-comment-inline': false,
+    'scss/double-slash-comment-empty-line-before': null,
+    'scss/double-slash-comment-inline': ['never', {ignore: ['stylelint-commands']}],
     'scss/double-slash-comment-whitespace-inside': 'always',
 
     // Declaration
@@ -47,7 +48,7 @@ module.exports = {
     'scss/declaration-nested-properties-no-divided-groups': true,
 
     // Media feature
-    'scss/media-feature-value-dollar-variable': true,
+    'scss/media-feature-value-dollar-variable': 'always',
 
     // Operator
     'scss/operator-no-newline-after': true,
