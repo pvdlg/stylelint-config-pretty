@@ -1,0 +1,51 @@
+{
+  "name": "@metahub/stylelint-config",
+  "description": "A set of shareable stylelint configs",
+  "version": "1.0.0",
+  "author": "Pierre Vanduynslager",
+  "bugs": {
+    "url": "https://github.com/vanduynslagerp/stylelint-config/issues"
+  },
+  "dependencies": {
+    "stylelint": "^7.12.0",
+    "stylelint-order": "^0.5.0",
+    "stylelint-scss": "^1.4.4"
+  },
+  "devDependencies": {
+    "@metahub/eslint-config": "^1.1.3",
+    "ava": "^0.20.0",
+    "codecov": "^2.2.0",
+    "cosmiconfig": "^2.1.3",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.1.1",
+    "nyc": "^11.0.3"
+  },
+  "homepage": "https://github.com/vanduynslagerp/stylelint-config#readme",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "stylelint": ">=7.12.0",
+    "stylelint-order": ">=0.5.0",
+    "stylelint-scss": ">=1.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanduynslagerp/stylelint-config.git"
+  },
+  "scripts": {
+    "clean": "del coverage && del .nyc_output",
+    "lint": "eslint *-config.js index.js package.json",
+    "pretest": "npm run lint && npm run clean",
+    "test": "nyc --all ava -v && nyc report --reporter=lcov",
+    "codecov": "codecov"
+  },
+  "nyc": {
+    "include": [
+      "{*-config,index}.js"
+    ]
+  }
+}
