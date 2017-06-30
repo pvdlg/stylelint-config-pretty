@@ -1,7 +1,7 @@
 {
   "name": "@metahub/stylelint-config",
   "description": "A set of shareable stylelint configs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Pierre Vanduynslager",
   "bugs": {
     "url": "https://github.com/vanduynslagerp/stylelint-config/issues"
