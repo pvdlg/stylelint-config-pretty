@@ -1,7 +1,7 @@
 module.exports = {
-  'extends': './index.js',
-  'plugins': ['stylelint-scss'],
-  'rules': {
+  extends: './index.js',
+  plugins: ['stylelint-scss'],
+  rules: {
     'at-rule-no-unknown': null,
     // @-else
     'scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
@@ -56,9 +56,9 @@ module.exports = {
     'scss/operator-no-unspaced': true,
 
     // Partial
-    'scss/partial-no-import': true,
+    'scss/partial-no-import': null,
 
     // Selector
-    'scss/selector-no-redundant-nesting-selector': true
-  }
+    'scss/selector-no-redundant-nesting-selector': true,
+  },
 };

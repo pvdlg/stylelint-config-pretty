@@ -1,13 +1,14 @@
 module.exports = {
-  'extends': './index.js',
-  'plugins': ['stylelint-order'],
-  'rules': {
+  extends: './index.js',
+  plugins: ['stylelint-order'],
+  rules: {
     'order/order': [
       'dollar-variables',
       'custom-properties',
       'declarations',
       'at-rules',
-      'rules'
+      'rules',
+      {type: 'at-rule', name: 'media', hasBlock: true},
     ],
     'order/properties-order': [[
       'position',
@@ -188,9 +189,9 @@ module.exports = {
       'animation-timing-function',
       'animation-delay',
       'animation-iteration-count',
-      'animation-direction'
+      'animation-direction',
     ],
-    {'unspecified': 'bottomAlphabetical'}],
-    'order/properties-alphabetical-order': null
-  }
+    {unspecified: 'bottomAlphabetical'}],
+    'order/properties-alphabetical-order': null,
+  },
 };
