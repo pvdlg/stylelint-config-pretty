@@ -1,9 +1,9 @@
 module.exports = {
-  'rules': {
+  rules: {
     // Color
     'color-hex-case': 'lower',
     'color-hex-length': 'short',
-    'color-named': ['never', {'ignore': ['inside-function']}],
+    'color-named': ['never', {ignore: ['inside-function']}],
     'color-no-hex': null,
     'color-no-invalid-hex': true,
 
@@ -66,13 +66,10 @@ module.exports = {
     'value-list-max-empty-lines': 0,
 
     // Custom property
-    'custom-property-empty-line-before': ['always',
-      {
-        'except': [
-          'after-comment', 'after-custom-property', 'first-nested'
-        ],
-        'ignore': ['after-comment', 'inside-single-line-block']
-      }],
+    'custom-property-empty-line-before': ['always', {
+      except: ['after-comment', 'after-custom-property', 'first-nested'],
+      ignore: ['after-comment', 'inside-single-line-block'],
+    }],
     'custom-property-pattern': null,
 
     // Shorthand property
@@ -102,12 +99,12 @@ module.exports = {
       '/^transition/': ['/all/'],
       '/^background/': ['http:', 'https:'],
       '/^border/': ['none'],
-      '/.+/': ['initial']
+      '/.+/': ['initial'],
     },
     'declaration-property-value-whitelist': null,
 
     // Declaration block
-    'declaration-block-no-duplicate-properties': [true, {'ignore': ['consecutive-duplicates-with-different-values']}],
+    'declaration-block-no-duplicate-properties': [true, {ignore: ['consecutive-duplicates-with-different-values']}],
     'declaration-block-no-redundant-longhand-properties': null,
     'declaration-block-no-shorthand-property-overrides': true,
     'declaration-block-semicolon-newline-after': 'always',
@@ -119,7 +116,7 @@ module.exports = {
 
     // Block
     'block-closing-brace-empty-line-before': 'never',
-    'block-closing-brace-newline-after': ['always', {'ignoreAtRules': ['if', 'else']}],
+    'block-closing-brace-newline-after': ['always', {ignoreAtRules: ['if', 'else']}],
     'block-closing-brace-newline-before': 'always-multi-line',
     'block-closing-brace-space-after': 'always-single-line',
     'block-closing-brace-space-before': 'always-single-line',
@@ -171,11 +168,7 @@ module.exports = {
     'selector-list-comma-space-before': 'never',
 
     // Rule
-    'rule-empty-line-before': ['always-multi-line',
-      {
-        'except': ['first-nested'],
-        'ignore': ['after-comment']
-      }],
+    'rule-empty-line-before': ['always-multi-line', {except: ['first-nested'], ignore: ['after-comment']}],
 
     // Media feature
     'media-feature-colon-space-after': 'always',
@@ -200,14 +193,11 @@ module.exports = {
 
     // At-rule
     'at-rule-blacklist': null,
-    'at-rule-empty-line-before': ['always',
-      {
-        'ignore': ['after-comment', 'blockless-after-blockless'],
-        'except': ['first-nested', 'after-same-name'],
-        'ignoreAtRules': [
-          'mixin', 'else', 'function'
-        ]
-      }],
+    'at-rule-empty-line-before': ['always', {
+      ignore: ['after-comment', 'blockless-after-blockless'],
+      except: ['first-nested', 'after-same-name'],
+      ignoreAtRules: ['mixin', 'else', 'function'],
+    }],
     'at-rule-name-case': 'lower',
     'at-rule-name-newline-after': null,
     'at-rule-name-space-after': 'always-single-line',
@@ -218,14 +208,10 @@ module.exports = {
     'at-rule-whitelist': null,
 
     // Comment
-    'comment-empty-line-before': ['always',
-      {
-        'except': ['first-nested'],
-        'ignore': ['stylelint-commands']
-      }],
+    'comment-empty-line-before': ['always', {except: ['first-nested'], ignore: ['stylelint-commands']}],
     'comment-no-empty': true,
     'comment-whitespace-inside': 'always',
-    'comment-word-blacklist': [['/^TODO/'], {'severity': 'warning'}],
+    'comment-word-blacklist': [['/^TODO/'], {severity: 'warning'}],
 
     // General / Sheet
     'indentation': 2,
@@ -239,6 +225,6 @@ module.exports = {
     'no-extra-semicolons': true,
     'no-invalid-double-slash-comments': true,
     'no-missing-end-of-source-newline': true,
-    'no-unknown-animations': true
-  }
+    'no-unknown-animations': true,
+  },
 };

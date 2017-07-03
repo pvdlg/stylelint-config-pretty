@@ -6,7 +6,7 @@ import stylelint from 'stylelint';
 const RULE_PATHS = {
   'stylelint': 'stylelint/lib/rules',
   'stylelint-scss': 'stylelint-scss/src/rules',
-  'stylelint-order': 'stylelint-order/rules'
+  'stylelint-order': 'stylelint-order/rules',
 };
 
 /**
@@ -33,7 +33,7 @@ export default async function getRuleFinder(config) {
     available,
     current,
     unused: difference(available, current),
-    unknown: difference(current, available)
+    unknown: difference(current, available),
   };
 }
 
