@@ -12,13 +12,13 @@
     "stylelint-scss": "^1.4.4"
   },
   "devDependencies": {
-    "@metahub/eslint-config": "^1.2.0",
+    "@metahub/eslint-config": "^1.3.0",
     "ava": "^0.20.0",
     "codecov": "^2.2.0",
     "cosmiconfig": "^2.1.3",
-    "del-cli": "^1.1.0",
     "eslint": "^4.1.1",
-    "nyc": "^11.0.3"
+    "nyc": "^11.0.3",
+    "rimraf": "^2.6.1"
   },
   "homepage": "https://github.com/vanduynslagerp/stylelint-config#readme",
   "keywords": [
@@ -37,11 +37,12 @@
     "url": "git+https://github.com/vanduynslagerp/stylelint-config.git"
   },
   "scripts": {
-    "clean": "del coverage && del .nyc_output",
+    "clean": "rimraf coverage && rimraf .nyc_output",
     "lint": "eslint *-config.js index.js package.json test",
     "pretest": "npm run lint && npm run clean",
     "test": "nyc --all ava -v && nyc report --reporter=lcov",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "prepublishOnly": "npm run test"
   },
   "nyc": {
     "include": [
