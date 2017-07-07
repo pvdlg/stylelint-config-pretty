@@ -66,10 +66,13 @@ module.exports = {
     'value-list-max-empty-lines': 0,
 
     // Custom property
-    'custom-property-empty-line-before': ['always', {
-      except: ['after-comment', 'after-custom-property', 'first-nested'],
-      ignore: ['after-comment', 'inside-single-line-block'],
-    }],
+    'custom-property-empty-line-before': [
+      'always',
+      {
+        except: ['after-comment', 'after-custom-property', 'first-nested'],
+        ignore: ['after-comment', 'inside-single-line-block'],
+      },
+    ],
     'custom-property-pattern': null,
 
     // Shorthand property
@@ -193,11 +196,14 @@ module.exports = {
 
     // At-rule
     'at-rule-blacklist': null,
-    'at-rule-empty-line-before': ['always', {
-      ignore: ['after-comment', 'blockless-after-blockless'],
-      except: ['first-nested', 'after-same-name'],
-      ignoreAtRules: ['mixin', 'else', 'function'],
-    }],
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        ignore: ['after-comment', 'blockless-after-blockless'],
+        except: ['first-nested', 'after-same-name'],
+        ignoreAtRules: ['mixin', 'else', 'function'],
+      },
+    ],
     'at-rule-name-case': 'lower',
     'at-rule-name-newline-after': null,
     'at-rule-name-space-after': 'always-single-line',
