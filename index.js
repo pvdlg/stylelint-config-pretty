@@ -35,7 +35,7 @@ module.exports = {
 
     // Number
     'number-leading-zero': 'never',
-    'number-max-precision': 3,
+    'number-max-precision': 4,
     'number-no-trailing-zeros': true,
 
     // String

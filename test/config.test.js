@@ -6,8 +6,11 @@ let scssRules;
 let orderRules;
 
 test.before(async() => {
-  [indexRules, scssRules, orderRules] =
-    await Promise.all([getRuleFinder('index.js'), getRuleFinder('scss-config.js'), getRuleFinder('order-config.js')]);
+  [indexRules, scssRules, orderRules] = await Promise.all([
+    getRuleFinder('index.js'),
+    getRuleFinder('scss-config.js'),
+    getRuleFinder('order-config.js'),
+  ]);
 });
 
 test('No unset rules in index.js', (t) => {

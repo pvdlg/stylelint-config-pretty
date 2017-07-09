@@ -23,6 +23,9 @@ module.exports = {
     'scss/at-import-partial-extension-blacklist': ['scss'],
     'scss/at-import-partial-extension-whitelist': null,
 
+    // @-rule
+    'scss/at-rule-no-unknown': true,
+
     // @-mixin
     'scss/at-mixin-argumentless-call-parentheses': 'always',
     'scss/at-mixin-pattern': null,
