@@ -4,3 +4,5 @@ coverage
 test
 .gitignore
 .npmignore
+.travis.yml
+.codeclimate.yml
