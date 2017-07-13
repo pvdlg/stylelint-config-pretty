@@ -31,10 +31,7 @@
     "rimraf": "^2.6.1"
   },
   "homepage": "https://github.com/vanduynslagerp/stylelint-config#readme",
-  "keywords": [
-    "stylelint",
-    "stylelint-config"
-  ],
+  "keywords": ["stylelint", "stylelint-config"],
   "license": "MIT",
   "main": "index.js",
   "peerDependencies": {
@@ -55,8 +52,6 @@
     "prepublishOnly": "npm run test"
   },
   "nyc": {
-    "include": [
-      "{*-config,index}.js"
-    ]
+    "include": ["{*-config,index}.js"]
   }
 }
