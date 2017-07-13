@@ -220,7 +220,7 @@ module.exports = {
     'comment-word-blacklist': [['/^TODO/'], {severity: 'warning'}],
 
     // General / Sheet
-    'indentation': 2,
+    indentation: 2,
     'max-empty-lines': 1,
     'max-line-length': [120, {ignore: ['comments']}],
     'max-nesting-depth': 3,

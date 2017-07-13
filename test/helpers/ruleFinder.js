@@ -1,10 +1,11 @@
 import path from 'path';
 import fs from 'fs';
+import pEvent from 'p-event';
 import {flattenDeep, difference} from 'lodash';
 import stylelint from 'stylelint';
 
 const RULE_PATHS = {
-  'stylelint': 'stylelint/lib/rules',
+  stylelint: 'stylelint/lib/rules',
   'stylelint-scss': 'stylelint-scss/src/rules',
   'stylelint-order': 'stylelint-order/rules',
 };
@@ -47,14 +48,14 @@ export default async function getRuleFinder(config) {
  */
 async function getAvailableRules(config) {
   const rules = await Promise.all(
-    Object.keys(stylelint.rules).map((rule) => filterDeprecated(`${RULE_PATHS.stylelint}/${rule}`, rule))
+    Object.keys(stylelint.rules).map(rule => filterDeprecated(`${RULE_PATHS.stylelint}/${rule}`, rule))
   );
   const configObject = require(config);
 
   if (configObject.plugins) {
     rules.push(await Promise.all(configObject.plugins.map(getPluginRules)));
   }
-  return flattenDeep(rules).filter((rule) => Boolean(rule));
+  return flattenDeep(rules).filter(rule => Boolean(rule));
 }
 
 /**
@@ -68,7 +69,7 @@ function getPluginRules(pluginName) {
   const pluginObject = require(pluginName);
 
   return Promise.all(
-    (pluginObject.default ? pluginObject.default : pluginObject).map((ruleObject) =>
+    (pluginObject.default ? pluginObject.default : pluginObject).map(ruleObject =>
       filterDeprecated(`${RULE_PATHS[pluginName]}/${ruleObject.ruleName.split('/')[1]}`, ruleObject.ruleName)
     )
   );
@@ -83,19 +84,9 @@ function getPluginRules(pluginName) {
  * @return {Promise<string>} a Promise that resolve to the rule name if not deprecated, to `null` otherwise.
  */
 function filterDeprecated(rulesPath, rule) {
-  const readStream = fs.createReadStream(path.resolve(process.cwd(), 'node_modules', `${rulesPath}/README.md`), {
+  const stream = fs.createReadStream(path.resolve(process.cwd(), 'node_modules', `${rulesPath}/README.md`), {
     highWaterMark: 1024,
   });
 
-  return new Promise((resolve, reject) => {
-    readStream
-      .on('data', (chunk) => {
-        resolve(/\*\*deprecated/i.test(chunk.toString()) ? null : rule);
-        readStream.destroy();
-      })
-      .on('error', (err) => {
-        readStream.destroy();
-        reject(err);
-      });
-  });
+  return pEvent(stream, 'data').then(chunk => (/\*\*deprecated/i.test(chunk.toString()) ? null : rule));
 }
