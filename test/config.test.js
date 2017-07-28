@@ -1,5 +1,5 @@
 import test from 'ava';
-import getRuleFinder from './helpers/ruleFinder';
+import getRuleFinder from './helpers/rule-finder';
 
 let indexRules;
 let scssRules;
