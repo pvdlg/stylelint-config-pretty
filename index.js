@@ -217,7 +217,7 @@ module.exports = {
     'comment-empty-line-before': ['always', {except: ['first-nested'], ignore: ['stylelint-commands']}],
     'comment-no-empty': true,
     'comment-whitespace-inside': 'always',
-    'comment-word-blacklist': [['/^TODO/'], {severity: 'warning'}],
+    'comment-word-blacklist': [['/^TODO/', '/^FIXME/', '/^HACK/'], {severity: 'warning'}],
 
     // General / Sheet
     indentation: 2,
