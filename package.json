@@ -6,16 +6,23 @@
   "bugs": {
     "url": "https://github.com/vanduynslagerp/stylelint-config/issues"
   },
+  "config": {
+    "commitizen": {
+      "path": "@metahub/cz-conventional-commit"
+    }
+  },
   "dependencies": {
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.6.0",
     "stylelint-scss": "^2.0.1"
   },
   "devDependencies": {
+    "@metahub/cz-conventional-commit": "^1.1.1",
     "@metahub/eslint-config": "^1.6.2",
     "ava": "^0.22.0",
     "babel-eslint": "^7.2.3",
     "codecov": "^2.3.0",
+    "commitizen": "^2.9.6",
     "conventional-changelog-metahub": "^1.0.1",
     "eslint": "^4.5.0",
     "eslint-config-prettier": "^2.3.0",
@@ -75,6 +82,7 @@
   },
   "scripts": {
     "clean": "rimraf coverage && rimraf .nyc_output",
+    "cm": "git-cz",
     "codecov": "codecov",
     "lint": "eslint *-config.js index.js package.json test",
     "prepublishOnly": "npm run test",
