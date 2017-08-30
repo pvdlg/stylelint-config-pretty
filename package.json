@@ -1,10 +1,10 @@
 {
-  "name": "@metahub/stylelint-config",
-  "description": "A set of shareable stylelint configs",
+  "name": "stylelint-config-pretty",
+  "description": "Modular Stylelint shareable configuration",
   "version": "0.0.0-development",
   "author": "Pierre Vanduynslager",
   "bugs": {
-    "url": "https://github.com/vanduynslagerp/stylelint-config/issues"
+    "url": "https://github.com/vanduynslagerp/stylelint-config-pretty/issues"
   },
   "config": {
     "commitizen": {
@@ -47,7 +47,12 @@
     "sr-commit-analyzer": "^2.0.2",
     "sr-release-notes-generator": "^1.1.2"
   },
-  "homepage": "https://github.com/vanduynslagerp/stylelint-config#readme",
+  "files": [
+    "*.js",
+    "!commitlint.config.js",
+    "!.eslintrc.js"
+  ],
+  "homepage": "https://github.com/vanduynslagerp/stylelint-config-pretty#readme",
   "keywords": [
     "stylelint",
     "stylelint-config"
@@ -55,14 +60,23 @@
   "license": "MIT",
   "main": "index.js",
   "nyc": {
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
     "include": [
-      "{*-config,index}.js"
-    ]
+      "*.js",
+      "!commitlint.config.js",
+      "!*.config.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "all": true
   },
   "peerDependencies": {
-    "stylelint": ">=8.0.0",
-    "stylelint-order": ">=0.6.0",
-    "stylelint-scss": ">=2.0.1"
+    "stylelint": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -80,18 +94,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vanduynslagerp/stylelint-config.git"
+    "url": "https://github.com/vanduynslagerp/stylelint-config-pretty.git"
   },
   "scripts": {
     "clean": "rimraf coverage && rimraf .nyc_output",
     "cm": "git-cz",
     "codecov": "codecov",
     "commitmsg": "commitlint -e",
-    "lint": "eslint *-config.js index.js package.json test",
+    "coverage": "nyc check-coverage",
+    "lint": "npm run clean && eslint . package.json test",
+    "postcheckout": "yarn install || (rimraf && npm install)",
     "precommit": "npm run lint",
     "prepush": "ava -v",
-    "pretest": "npm run lint && npm run clean",
+    "pretest": "npm run clean && npm run lint",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "nyc --all ava -v && nyc report --reporter=lcov"
+    "test": "nyc ava -v"
   }
 }

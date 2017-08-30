@@ -1,2 +1,4 @@
 .eslintrc.js
 commitlint.config.js
+coverage
+.nyc_output
