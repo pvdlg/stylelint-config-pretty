@@ -8,6 +8,8 @@ engines:
         - .json
 ratings:
    paths:
-   - '*-config.js'
-   - index.js
+   - '*.js'
    - package.json
+exclude_paths:
+ - commitlint.config.js
+ - .eslintrc.js

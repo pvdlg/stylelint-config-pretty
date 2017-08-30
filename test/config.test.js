@@ -8,8 +8,8 @@ let orderRules;
 test.before(async () => {
   [indexRules, scssRules, orderRules] = await Promise.all([
     getRuleFinder('index.js'),
-    getRuleFinder('scss-config.js'),
-    getRuleFinder('order-config.js'),
+    getRuleFinder('scss.js'),
+    getRuleFinder('order.js'),
   ]);
 });
 
@@ -21,18 +21,18 @@ test('No deprecated or inexistent rules in index.js', t => {
   t.deepEqual([], indexRules.unknown);
 });
 
-test('No unset rules in scss-config.js', t => {
+test('No unset rules in scss.js', t => {
   t.deepEqual([], scssRules.unused);
 });
 
-test('No deprecated or inexistent rules in scss-config.js', t => {
+test('No deprecated or inexistent rules in scss.js', t => {
   t.deepEqual([], scssRules.unknown);
 });
 
-test('No unset rules in order-config.js', t => {
+test('No unset rules in order.js', t => {
   t.deepEqual([], orderRules.unused);
 });
 
-test('No deprecated or inexistent rules in order-config.js', t => {
+test('No deprecated or inexistent rules in order.js', t => {
   t.deepEqual([], orderRules.unknown);
 });
