@@ -7,11 +7,13 @@ module.exports = {
     'scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
     'scss/at-else-closing-brace-space-after': 'always-intermediate',
     'scss/at-else-empty-line-before': 'never',
+    'scss/at-else-if-parentheses-space-before': 'always',
 
     // @-extend
     'scss/at-extend-no-missing-placeholder': true,
 
     // @-function
+    'scss/at-function-parentheses-space-before': 'never',
     'scss/at-function-pattern': null,
 
     // @-if
@@ -28,6 +30,7 @@ module.exports = {
 
     // @-mixin
     'scss/at-mixin-argumentless-call-parentheses': 'always',
+    'scss/at-mixin-parentheses-space-before': 'never',
     'scss/at-mixin-pattern': null,
 
     // $-variables
