@@ -12,7 +12,7 @@
     }
   },
   "dependencies": {
-    "stylelint": "^8.0.0",
+    "stylelint": "^8.4.0",
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.1.0"
   },
